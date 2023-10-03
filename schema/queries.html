@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>QUERYS · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mutations.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    機能仕様
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../functions/products.html">
+            
+                <a href="../functions/products.html">
+            
+                    
+                    商品一覧情報の取得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../functions/product.html">
+            
+                <a href="../functions/product.html">
+            
+                    
+                    商品情報の取得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../functions/updateProductStock.html">
+            
+                <a href="../functions/updateProductStock.html">
+            
+                    
+                    商品在庫の更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    スキーマ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="queries.html">
+            
+                <a href="queries.html">
+            
+                    
+                    QUERYS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="mutations.html">
+            
+                <a href="mutations.html">
+            
+                    
+                    MUTATIONS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="objects.html">
+            
+                <a href="objects.html">
+            
+                    
+                    OBJECTS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="scalars.html">
+            
+                <a href="scalars.html">
+            
+                    
+                    SCALARS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >QUERYS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="queries">Queries</h1>
+<h3 id="about-queries">About queries</h3>
+<h3 id="customer">customer</h3>
+<h4 id="type-customer">Type: <a href="objects.html#customer">Customer</a></h4>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id (<a href="scalars.html#id">ID!</a>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="customers">customers</h3>
+<h4 id="type-customerconnection">Type: <a href="objects.html#customerconnection">CustomerConnection</a></h4>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>multi (<a href="scalars.html#string">String</a>)</td>
+<td><p>会員ID・メールアドレス・お名前</p></td>
+</tr>
+<tr>
+<td>customer_status (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>会員種別</p></td>
+</tr>
+<tr>
+<td>sex (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>性別</p></td>
+</tr>
+<tr>
+<td>birth_month (<a href="scalars.html#string">String</a>)</td>
+<td><p>誕生月</p></td>
+</tr>
+<tr>
+<td>birth_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>誕生日(開始)</p></td>
+</tr>
+<tr>
+<td>birth_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>誕生日(終了)</p></td>
+</tr>
+<tr>
+<td>pref (<a href="scalars.html#string">String</a>)</td>
+<td><p>都道府県</p></td>
+</tr>
+<tr>
+<td>phone_number (<a href="scalars.html#string">String</a>)</td>
+<td><p>電話番号</p></td>
+</tr>
+<tr>
+<td>buy_product_name (<a href="scalars.html#string">String</a>)</td>
+<td><p>購入商品名</p></td>
+</tr>
+<tr>
+<td>buy_total_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>購入金額(開始)</p></td>
+</tr>
+<tr>
+<td>buy_total_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>購入金額(終了)</p></td>
+</tr>
+<tr>
+<td>buy_times_start (<a href="scalars.html#int">Int</a>)</td>
+<td><p>購入件数(開始)</p></td>
+</tr>
+<tr>
+<td>buy_times_end (<a href="scalars.html#int">Int</a>)</td>
+<td><p>購入件数(終了)</p></td>
+</tr>
+<tr>
+<td>create_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>登録日(開始)</p></td>
+</tr>
+<tr>
+<td>create_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>登録日(開始)</p></td>
+</tr>
+<tr>
+<td>create_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>登録日(終了)</p></td>
+</tr>
+<tr>
+<td>create_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>登録日(終了)</p></td>
+</tr>
+<tr>
+<td>update_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>更新日(開始)</p></td>
+</tr>
+<tr>
+<td>update_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>更新日(開始)</p></td>
+</tr>
+<tr>
+<td>update_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>更新日(終了)</p></td>
+</tr>
+<tr>
+<td>update_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>更新日(終了)</p></td>
+</tr>
+<tr>
+<td>last_buy_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>最終購入日(開始)</p></td>
+</tr>
+<tr>
+<td>last_buy_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>最終購入日(開始)</p></td>
+</tr>
+<tr>
+<td>last_buy_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>最終購入日(終了)</p></td>
+</tr>
+<tr>
+<td>last_buy_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>最終購入日(終了)</p></td>
+</tr>
+<tr>
+<td>sortkey (<a href="scalars.html#string">String</a>)</td>
+<td><p>listSortKey</p></td>
+</tr>
+<tr>
+<td>sorttype (<a href="scalars.html#string">String</a>)</td>
+<td><p>listSortType</p></td>
+</tr>
+<tr>
+<td>page (<a href="scalars.html#int">Int</a>)</td>
+<td><p>ページ番号</p></td>
+</tr>
+<tr>
+<td>limit (<a href="scalars.html#int">Int</a>)</td>
+<td><p>ページあたりの取得数の上限</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="order">order</h3>
+<h4 id="type-order">Type: <a href="objects.html#order">Order</a></h4>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id (<a href="scalars.html#id">ID!</a>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="orders">orders</h3>
+<h4 id="type-orderconnection">Type: <a href="objects.html#orderconnection">OrderConnection</a></h4>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>multi (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文番号・お名前・会社名・メールアドレス・電話番号</p></td>
+</tr>
+<tr>
+<td>status (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>対応状況</p></td>
+</tr>
+<tr>
+<td>name (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文者名</p></td>
+</tr>
+<tr>
+<td>kana (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文者名(カナ)</p></td>
+</tr>
+<tr>
+<td>company_name (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文者会社名</p></td>
+</tr>
+<tr>
+<td>email (<a href="scalars.html#string">String</a>)</td>
+<td><p>メールアドレス</p></td>
+</tr>
+<tr>
+<td>order_no (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文番号</p></td>
+</tr>
+<tr>
+<td>phone_number (<a href="scalars.html#string">String</a>)</td>
+<td><p>電話番号</p></td>
+</tr>
+<tr>
+<td>tracking_number (<a href="scalars.html#string">String</a>)</td>
+<td><p>お問い合わせ番号</p></td>
+</tr>
+<tr>
+<td>shipping_mail (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>出荷メール</p></td>
+</tr>
+<tr>
+<td>payment (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>支払方法</p></td>
+</tr>
+<tr>
+<td>order_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文日(開始)</p></td>
+</tr>
+<tr>
+<td>order_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>注文日(開始)</p></td>
+</tr>
+<tr>
+<td>order_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>注文日(終了)</p></td>
+</tr>
+<tr>
+<td>order_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>注文日(終了)</p></td>
+</tr>
+<tr>
+<td>payment_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>入金日(開始)</p></td>
+</tr>
+<tr>
+<td>payment_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>入金日(開始)</p></td>
+</tr>
+<tr>
+<td>payment_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>入金日(終了)</p></td>
+</tr>
+<tr>
+<td>payment_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>入金日(終了)</p></td>
+</tr>
+<tr>
+<td>update_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>更新日(開始)</p></td>
+</tr>
+<tr>
+<td>update_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>更新日(開始)</p></td>
+</tr>
+<tr>
+<td>update_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>更新日(終了)</p></td>
+</tr>
+<tr>
+<td>update_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>更新日(終了)</p></td>
+</tr>
+<tr>
+<td>shipping_delivery_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>お届け日(開始)</p></td>
+</tr>
+<tr>
+<td>shipping_delivery_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>お届け日(開始)</p></td>
+</tr>
+<tr>
+<td>shipping_delivery_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>お届け日(終了)</p></td>
+</tr>
+<tr>
+<td>shipping_delivery_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>お届け日(終了)</p></td>
+</tr>
+<tr>
+<td>payment_total_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>購入金額(開始)</p></td>
+</tr>
+<tr>
+<td>payment_total_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>購入金額(終了)</p></td>
+</tr>
+<tr>
+<td>buy_product_name (<a href="scalars.html#string">String</a>)</td>
+<td><p>購入商品名</p></td>
+</tr>
+<tr>
+<td>sortkey (<a href="scalars.html#string">String</a>)</td>
+<td><p>listSortKey</p></td>
+</tr>
+<tr>
+<td>sorttype (<a href="scalars.html#string">String</a>)</td>
+<td><p>listSortType</p></td>
+</tr>
+<tr>
+<td>page (<a href="scalars.html#int">Int</a>)</td>
+<td><p>ページ番号</p></td>
+</tr>
+<tr>
+<td>limit (<a href="scalars.html#int">Int</a>)</td>
+<td><p>ページあたりの取得数の上限</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="product">product</h3>
+<p>商品の情報を取得するクエリ</p>
+
+<h4 id="type-product">Type: <a href="objects.html#product">Product</a></h4>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id (<a href="scalars.html#id">ID!</a>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="products">products</h3>
+<p>商品一覧の情報を取得するクエリ</p>
+
+<h4 id="type-productconnection">Type: <a href="objects.html#productconnection">ProductConnection</a></h4>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id (<a href="scalars.html#string">String</a>)</td>
+<td><p>商品名・商品ID・商品コード</p></td>
+</tr>
+<tr>
+<td>category_id (<a href="scalars.html#string">String</a>)</td>
+<td><p>カテゴリ</p></td>
+</tr>
+<tr>
+<td>status (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>公開ステータス</p></td>
+</tr>
+<tr>
+<td>stock (<a href="scalars.html#string">[String]</a>)</td>
+<td><p>在庫数</p></td>
+</tr>
+<tr>
+<td>tag_id (<a href="scalars.html#string">String</a>)</td>
+<td><p>タグ</p></td>
+</tr>
+<tr>
+<td>create_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>登録日(開始)</p></td>
+</tr>
+<tr>
+<td>create_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>登録日(開始)</p></td>
+</tr>
+<tr>
+<td>create_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>登録日(終了)</p></td>
+</tr>
+<tr>
+<td>create_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>登録日(終了)</p></td>
+</tr>
+<tr>
+<td>update_date_start (<a href="scalars.html#string">String</a>)</td>
+<td><p>更新日(開始)</p></td>
+</tr>
+<tr>
+<td>update_datetime_start (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>更新日(開始)</p></td>
+</tr>
+<tr>
+<td>update_date_end (<a href="scalars.html#string">String</a>)</td>
+<td><p>更新日(終了)</p></td>
+</tr>
+<tr>
+<td>update_datetime_end (<a href="scalars.html#datetime">DateTime</a>)</td>
+<td><p>更新日(終了)</p></td>
+</tr>
+<tr>
+<td>sortkey (<a href="scalars.html#string">String</a>)</td>
+<td><p>listSortKey</p></td>
+</tr>
+<tr>
+<td>sorttype (<a href="scalars.html#string">String</a>)</td>
+<td><p>listSortType</p></td>
+</tr>
+<tr>
+<td>page (<a href="scalars.html#int">Int</a>)</td>
+<td><p>ページ番号</p></td>
+</tr>
+<tr>
+<td>limit (<a href="scalars.html#int">Int</a>)</td>
+<td><p>ページあたりの取得数の上限</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="mutations.html" class="navigation navigation-next navigation-unique" aria-label="Next page: MUTATIONS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"QUERYS","level":"1.3.1","depth":2,"next":{"title":"MUTATIONS","level":"1.3.2","depth":2,"path":"schema/mutations.md","ref":"schema/mutations.md","articles":[]},"previous":{"title":"スキーマ","level":"1.3","depth":1,"ref":"","articles":[{"title":"QUERYS","level":"1.3.1","depth":2,"path":"schema/queries.md","ref":"schema/queries.md","articles":[]},{"title":"MUTATIONS","level":"1.3.2","depth":2,"path":"schema/mutations.md","ref":"schema/mutations.md","articles":[]},{"title":"OBJECTS","level":"1.3.3","depth":2,"path":"schema/objects.md","ref":"schema/objects.md","articles":[]},{"title":"SCALARS","level":"1.3.4","depth":2,"path":"schema/scalars.md","ref":"schema/scalars.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"schema/queries.md","mtime":"2023-10-02T05:26:36.648Z","type":"markdown"},"gitbook":{"version":"5.1.1","time":"2023-10-03T00:47:25.445Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

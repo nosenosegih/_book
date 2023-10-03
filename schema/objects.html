@@ -1,0 +1,2468 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>OBJECTS · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="scalars.html" />
+    
+    
+    <link rel="prev" href="mutations.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    機能仕様
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../functions/products.html">
+            
+                <a href="../functions/products.html">
+            
+                    
+                    商品一覧情報の取得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../functions/product.html">
+            
+                <a href="../functions/product.html">
+            
+                    
+                    商品情報の取得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../functions/updateProductStock.html">
+            
+                <a href="../functions/updateProductStock.html">
+            
+                    
+                    商品在庫の更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    スキーマ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="queries.html">
+            
+                <a href="queries.html">
+            
+                    
+                    QUERYS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="mutations.html">
+            
+                <a href="mutations.html">
+            
+                    
+                    MUTATIONS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="objects.html">
+            
+                <a href="objects.html">
+            
+                    
+                    OBJECTS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="scalars.html">
+            
+                <a href="scalars.html">
+            
+                    
+                    SCALARS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >OBJECTS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="objects">Objects</h1>
+<h3 id="about-objects">About objects</h3>
+<p><a href="https://graphql.github.io/graphql-spec/June2018/#sec-Objects" target="_blank">Objects</a> in GraphQL represent the resources you can access. An object can contain a list of fields, which are specifically typed.</p>
+<h3 id="authority">Authority</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="category">Category</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Children</strong> (<a href="objects.html#category">[Category]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Parent</strong> (<a href="objects.html#category">Category</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductCategories</strong> (<a href="objects.html#productcategory">[ProductCategory]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>hierarchy</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="classcategory">ClassCategory</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>ClassName</strong> (<a href="objects.html#classname">ClassName</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>backend_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>visible</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="classname">ClassName</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>ClassCategories</strong> (<a href="objects.html#classcategory">[ClassCategory]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>backend_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="country">Country</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customer">Customer</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Country</strong> (<a href="objects.html#country">Country</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>CustomerAddresses</strong> (<a href="objects.html#customeraddress">[CustomerAddress]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>CustomerFavoriteProducts</strong> (<a href="objects.html#customerfavoriteproduct">[CustomerFavoriteProduct]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Job</strong> (<a href="objects.html#job">Job</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Orders</strong> (<a href="objects.html#order">[Order]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Pref</strong> (<a href="objects.html#pref">Pref</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Sex</strong> (<a href="objects.html#sex">Sex</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Status</strong> (<a href="objects.html#customerstatus">CustomerStatus</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>birth</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>buy_times</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>buy_total</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>company_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>email</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>first_buy_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>last_buy_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name01</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name02</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>note</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>phone_number</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>point</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>postal_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>reset_expire</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customeraddress">CustomerAddress</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Country</strong> (<a href="objects.html#country">Country</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Customer</strong> (<a href="objects.html#customer">Customer</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Pref</strong> (<a href="objects.html#pref">Pref</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>company_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name01</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name02</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>phone_number</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>postal_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customerconnection">CustomerConnection</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>edges</strong> (<a href="objects.html#customeredge">[CustomerEdge]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>nodes</strong> (<a href="objects.html#customer">[Customer]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>pageInfo</strong> (<a href="objects.html#customerpageinfo">CustomerPageInfo!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>totalCount</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customeredge">CustomerEdge</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>node</strong> (<a href="objects.html#customer">Customer</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customerfavoriteproduct">CustomerFavoriteProduct</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Customer</strong> (<a href="objects.html#customer">Customer</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customerorderstatus">CustomerOrderStatus</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customerpageinfo">CustomerPageInfo</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>hasNextPage</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>hasPreviousPage</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="customerstatus">CustomerStatus</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="delivery">Delivery</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>DeliveryFees</strong> (<a href="objects.html#deliveryfee">[DeliveryFee]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>DeliveryTimes</strong> (<a href="objects.html#deliverytime">[DeliveryTime]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>PaymentOptions</strong> (<a href="objects.html#paymentoption">[PaymentOption]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>SaleType</strong> (<a href="objects.html#saletype">SaleType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>confirm_url</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>description</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>service_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>visible</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="deliveryduration">DeliveryDuration</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>duration</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="deliveryfee">DeliveryFee</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Delivery</strong> (<a href="objects.html#delivery">Delivery</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Pref</strong> (<a href="objects.html#pref">Pref</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>fee</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="deliverytime">DeliveryTime</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Delivery</strong> (<a href="objects.html#delivery">Delivery</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>delivery_time</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>visible</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="devicetype">DeviceType</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="extendedproductstock">ExtendedProductStock</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td><p>更新された商品のコード</p></td>
+  </tr>
+  <tr>
+    <td><strong>stock</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td><p>更新後の商品の在庫数</p></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="job">Job</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="mailhistory">MailHistory</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Order</strong> (<a href="objects.html#order">Order</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>mail_body</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>mail_html_body</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>mail_subject</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>send_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="member">Member</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Authority</strong> (<a href="objects.html#authority">Authority</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Work</strong> (<a href="objects.html#work">Work</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>department</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>login_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>login_id</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="order">Order</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Country</strong> (<a href="objects.html#country">Country</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Customer</strong> (<a href="objects.html#customer">Customer</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>CustomerOrderStatus</strong> (<a href="objects.html#customerorderstatus">CustomerOrderStatus</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>DeviceType</strong> (<a href="objects.html#devicetype">DeviceType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Job</strong> (<a href="objects.html#job">Job</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>MailHistories</strong> (<a href="objects.html#mailhistory">[MailHistory]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>OrderItems</strong> (<a href="objects.html#orderitem">[OrderItem]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>OrderStatus</strong> (<a href="objects.html#orderstatus">OrderStatus</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>OrderStatusColor</strong> (<a href="objects.html#orderstatuscolor">OrderStatusColor</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Payment</strong> (<a href="objects.html#payment">Payment</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Pref</strong> (<a href="objects.html#pref">Pref</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Sex</strong> (<a href="objects.html#sex">Sex</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Shippings</strong> (<a href="objects.html#shipping">[Shipping]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>add_point</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>birth</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>charge</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>company_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>complete_mail_message</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>complete_message</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>currency_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>delivery_fee_total</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>discount</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>email</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>message</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name01</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name02</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>note</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>order_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>order_no</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>payment_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>payment_method</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>payment_total</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>phone_number</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>postal_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>pre_order_id</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>subtotal</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>total</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>use_point</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderconnection">OrderConnection</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>edges</strong> (<a href="objects.html#orderedge">[OrderEdge]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>nodes</strong> (<a href="objects.html#order">[Order]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>pageInfo</strong> (<a href="objects.html#orderpageinfo">OrderPageInfo!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>totalCount</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderedge">OrderEdge</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>node</strong> (<a href="objects.html#order">Order</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderitem">OrderItem</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Order</strong> (<a href="objects.html#order">Order</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>OrderItemType</strong> (<a href="objects.html#orderitemtype">OrderItemType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductClass</strong> (<a href="objects.html#productclass">ProductClass</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>RoundingType</strong> (<a href="objects.html#roundingtype">RoundingType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Shipping</strong> (<a href="objects.html#shipping">Shipping</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>TaxDisplayType</strong> (<a href="objects.html#taxdisplaytype">TaxDisplayType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>TaxType</strong> (<a href="objects.html#taxtype">TaxType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>class_category_name1</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>class_category_name2</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>class_name1</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>class_name2</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>currency_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>point_rate</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>price</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>processor_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>product_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>product_name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>quantity</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax_adjust</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax_rate</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax_rule_id</strong> (<a href="scalars.html#int">Int</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderitemtype">OrderItemType</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderpageinfo">OrderPageInfo</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>hasNextPage</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>hasPreviousPage</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderstatus">OrderStatus</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>display_order_count</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="orderstatuscolor">OrderStatusColor</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="payment">Payment</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>PaymentOptions</strong> (<a href="objects.html#paymentoption">[PaymentOption]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>charge</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>fixed</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>method</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>method_class</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>payment_image</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>rule_max</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>rule_min</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>visible</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="paymentoption">PaymentOption</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Delivery</strong> (<a href="objects.html#delivery">Delivery</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Payment</strong> (<a href="objects.html#payment">Payment</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>delivery_id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>payment_id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="pref">Pref</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="product">Product</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>CustomerFavoriteProducts</strong> (<a href="objects.html#customerfavoriteproduct">[CustomerFavoriteProduct]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductCategories</strong> (<a href="objects.html#productcategory">[ProductCategory]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductClasses</strong> (<a href="objects.html#productclass">[ProductClass]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductImage</strong> (<a href="objects.html#productimage">[ProductImage]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductTag</strong> (<a href="objects.html#producttag">[ProductTag]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Status</strong> (<a href="objects.html#productstatus">ProductStatus</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>description_detail</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>description_list</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>free_area</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>note</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>search_word</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productcategory">ProductCategory</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Category</strong> (<a href="objects.html#category">Category</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>category_id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>product_id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productclass">ProductClass</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>ClassCategory1</strong> (<a href="objects.html#classcategory">ClassCategory</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ClassCategory2</strong> (<a href="objects.html#classcategory">ClassCategory</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>DeliveryDuration</strong> (<a href="objects.html#deliveryduration">DeliveryDuration</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductStock</strong> (<a href="objects.html#productstock">ProductStock</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>SaleType</strong> (<a href="objects.html#saletype">SaleType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>TaxRule</strong> (<a href="objects.html#taxrule">TaxRule</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>currency_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>delivery_fee</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>point_rate</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>price01</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>price02</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sale_limit</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>stock</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>stock_unlimited</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>visible</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productconnection">ProductConnection</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>edges</strong> (<a href="objects.html#productedge">[ProductEdge]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>nodes</strong> (<a href="objects.html#product">[Product]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>pageInfo</strong> (<a href="objects.html#productpageinfo">ProductPageInfo!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>totalCount</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productedge">ProductEdge</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>node</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productimage">ProductImage</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>file_name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productpageinfo">ProductPageInfo</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>hasNextPage</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>hasPreviousPage</strong> (<a href="scalars.html#boolean">Boolean!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productstatus">ProductStatus</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="productstock">ProductStock</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductClass</strong> (<a href="objects.html#productclass">ProductClass</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>stock</strong> (<a href="scalars.html#float">Float</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="producttag">ProductTag</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Tag</strong> (<a href="objects.html#tag">Tag</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="roundingtype">RoundingType</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="saletype">SaleType</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="sex">Sex</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="shipping">Shipping</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Country</strong> (<a href="objects.html#country">Country</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Delivery</strong> (<a href="objects.html#delivery">Delivery</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Order</strong> (<a href="objects.html#order">Order</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>OrderItems</strong> (<a href="objects.html#orderitem">[OrderItem]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Pref</strong> (<a href="objects.html#pref">Pref</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>addr02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>company_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana01</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>kana02</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>mail_send_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name01</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name02</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>note</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>phone_number</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>postal_code</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>shipping_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>shipping_delivery_date</strong> (<a href="scalars.html#datetime">DateTime</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>shipping_delivery_name</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>shipping_delivery_time</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>time_id</strong> (<a href="scalars.html#int">Int</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tracking_number</strong> (<a href="scalars.html#string">String</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="tag">Tag</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>ProductTag</strong> (<a href="objects.html#producttag">[ProductTag]</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="taxdisplaytype">TaxDisplayType</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="taxrule">TaxRule</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Country</strong> (<a href="objects.html#country">Country</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Creator</strong> (<a href="objects.html#member">Member</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Pref</strong> (<a href="objects.html#pref">Pref</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Product</strong> (<a href="objects.html#product">Product</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ProductClass</strong> (<a href="objects.html#productclass">ProductClass</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>RoundingType</strong> (<a href="objects.html#roundingtype">RoundingType</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>apply_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>create_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax_adjust</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>tax_rate</strong> (<a href="scalars.html#float">Float!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>update_date</strong> (<a href="scalars.html#datetime">DateTime!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="taxtype">TaxType</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+<h3 id="work">Work</h3>
+<h4 id="fields">Fields</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>id</strong> (<a href="scalars.html#id">ID!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong> (<a href="scalars.html#string">String!</a>)</td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>sort_no</strong> (<a href="scalars.html#int">Int!</a>)</td> 
+    <td></td>
+  </tr>
+</table>
+
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mutations.html" class="navigation navigation-prev " aria-label="Previous page: MUTATIONS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="scalars.html" class="navigation navigation-next " aria-label="Next page: SCALARS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OBJECTS","level":"1.3.3","depth":2,"next":{"title":"SCALARS","level":"1.3.4","depth":2,"path":"schema/scalars.md","ref":"schema/scalars.md","articles":[]},"previous":{"title":"MUTATIONS","level":"1.3.2","depth":2,"path":"schema/mutations.md","ref":"schema/mutations.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"schema/objects.md","mtime":"2023-09-29T06:23:02.000Z","type":"markdown"},"gitbook":{"version":"5.1.1","time":"2023-10-03T00:47:25.445Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
